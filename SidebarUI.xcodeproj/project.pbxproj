@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		241026DB24B90F830059940F /* SidebarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241026C824B90F830059940F /* SidebarApp.swift */; };
 		241026DC24B90F830059940F /* SidebarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241026C824B90F830059940F /* SidebarApp.swift */; };
-		241026DD24B90F830059940F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241026C924B90F830059940F /* ContentView.swift */; };
-		241026DE24B90F830059940F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241026C924B90F830059940F /* ContentView.swift */; };
 		241026DF24B90F830059940F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241026CA24B90F830059940F /* Assets.xcassets */; };
 		241026E024B90F830059940F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241026CA24B90F830059940F /* Assets.xcassets */; };
 		241026EF24B912050059940F /* SidebarUI in Frameworks */ = {isa = PBXBuildFile; productRef = 241026EE24B912050059940F /* SidebarUI */; };
@@ -19,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		241026C824B90F830059940F /* SidebarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarApp.swift; sourceTree = "<group>"; };
-		241026C924B90F830059940F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		241026CA24B90F830059940F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241026CF24B90F830059940F /* SidebarUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		241026D724B90F830059940F /* SidebarUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				241026C824B90F830059940F /* SidebarApp.swift */,
-				241026C924B90F830059940F /* ContentView.swift */,
 				241026CA24B90F830059940F /* Assets.xcassets */,
 				241026EB24B9101B0059940F /* iOS.plist */,
 				241026EA24B9101B0059940F /* macOS.entitlements */,
@@ -191,7 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				241026DD24B90F830059940F /* ContentView.swift in Sources */,
 				241026DB24B90F830059940F /* SidebarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +195,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				241026DE24B90F830059940F /* ContentView.swift in Sources */,
 				241026DC24B90F830059940F /* SidebarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

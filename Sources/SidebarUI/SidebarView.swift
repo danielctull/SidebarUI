@@ -4,12 +4,14 @@ import SwiftUI
 
 public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
 
-    @State var showLeading: Bool = true
-    @State var showTrailing: Bool = true
+    @State private var showLeading = true
+    @State private var showTrailing = true
+    @State private var leadingSize = CGSize.zero
+    @State private var trailingSize = CGSize.zero
 
-    let leading: Leading
-    let trailing: Trailing
-    let content: Content
+    private let leading: Leading
+    private let trailing: Trailing
+    private let content: Content
 
     public init(
         @ViewBuilder content: () -> Content,
@@ -22,21 +24,49 @@ public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
     }
 
     public var body: some View {
-        HStack {
-            leading
-            content
-            trailing
+        VStack {
+            HStack {
+                Button {
+                    withAnimation { showLeading.toggle() }
+                } label: {
+                    Image(systemName: "sidebar.left")
+                }
+                Spacer()
+                Button {
+                    withAnimation { showTrailing.toggle() }
+                } label: {
+                    Image(systemName: "sidebar.right")
+                }
+            }
+            .padding()
+
+            main
         }
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Image(systemName: "sidebar.left")
-////                Button {
-////                    withAnimation { showLeading.toggle() }
-////                } label: {
-//////                    Image(systemName: "sidebar.left")
-////                    Text("Heloo")
-////                }
-//            }
-//        }
+    }
+
+    @ViewBuilder
+    var main: some View {
+        Color.clear
+            .overlay(
+                HStack {
+                    leading
+                        .measure { leadingSize = $0 }
+                    Spacer()
+                }
+            )
+            .overlay(
+                HStack {
+                    Spacer()
+                    trailing
+                        .measure { trailingSize = $0 }
+                }
+            )
+            .overlay(
+                HStack {
+                    content
+                        .padding(.leading, showLeading ? leadingSize.width : 0)
+                        .padding(.trailing, showTrailing ? trailingSize.width : 0)
+                }
+            )
     }
 }
