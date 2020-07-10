@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,17 +13,20 @@
 		241026DE24B90F830059940F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241026C924B90F830059940F /* ContentView.swift */; };
 		241026DF24B90F830059940F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241026CA24B90F830059940F /* Assets.xcassets */; };
 		241026E024B90F830059940F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241026CA24B90F830059940F /* Assets.xcassets */; };
+		241026EF24B912050059940F /* SidebarUI in Frameworks */ = {isa = PBXBuildFile; productRef = 241026EE24B912050059940F /* SidebarUI */; };
+		241026F124B9120A0059940F /* SidebarUI in Frameworks */ = {isa = PBXBuildFile; productRef = 241026F024B9120A0059940F /* SidebarUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		241026C824B90F830059940F /* SidebarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarApp.swift; sourceTree = "<group>"; };
 		241026C924B90F830059940F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		241026CA24B90F830059940F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		241026CF24B90F830059940F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		241026D724B90F830059940F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		241026CF24B90F830059940F /* SidebarUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		241026D724B90F830059940F /* SidebarUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		241026E924B9101B0059940F /* macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS.plist; sourceTree = "<group>"; };
 		241026EA24B9101B0059940F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		241026EB24B9101B0059940F /* iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
+		241026EC24B9117F0059940F /* SidebarUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SidebarUI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241026EF24B912050059940F /* SidebarUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241026F124B9120A0059940F /* SidebarUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,8 +52,10 @@
 		241026C224B90F820059940F = {
 			isa = PBXGroup;
 			children = (
+				241026EC24B9117F0059940F /* SidebarUI */,
 				241026C724B90F820059940F /* App */,
 				241026D024B90F830059940F /* Products */,
+				241026ED24B912050059940F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,10 +75,17 @@
 		241026D024B90F830059940F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				241026CF24B90F830059940F /* Example.app */,
-				241026D724B90F830059940F /* Example.app */,
+				241026CF24B90F830059940F /* SidebarUI.app */,
+				241026D724B90F830059940F /* SidebarUI.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		241026ED24B912050059940F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,8 +104,11 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				241026EE24B912050059940F /* SidebarUI */,
+			);
 			productName = "Example (iOS)";
-			productReference = 241026CF24B90F830059940F /* Example.app */;
+			productReference = 241026CF24B90F830059940F /* SidebarUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		241026D624B90F830059940F /* macOS */ = {
@@ -107,8 +124,11 @@
 			dependencies = (
 			);
 			name = macOS;
+			packageProductDependencies = (
+				241026F024B9120A0059940F /* SidebarUI */,
+			);
 			productName = "Example (macOS)";
-			productReference = 241026D724B90F830059940F /* Example.app */;
+			productReference = 241026D724B90F830059940F /* SidebarUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -221,8 +241,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B2M757K4LG;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -239,9 +262,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.SidebarUI;
+				PRODUCT_NAME = "SidebarUI Demo";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -281,9 +308,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B2M757K4LG;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -293,8 +323,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.SidebarUI;
+				PRODUCT_NAME = "SidebarUI Demo";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -306,17 +340,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B2M757K4LG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/iOS.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.Example;
-				PRODUCT_NAME = Example;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,17 +356,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B2M757K4LG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/iOS.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.Example;
-				PRODUCT_NAME = Example;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -350,19 +374,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = B2M757K4LG;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/macOS.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.Example;
-				PRODUCT_NAME = Example;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -373,19 +391,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = B2M757K4LG;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/macOS.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.Example;
-				PRODUCT_NAME = Example;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -421,6 +433,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		241026EE24B912050059940F /* SidebarUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SidebarUI;
+		};
+		241026F024B9120A0059940F /* SidebarUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SidebarUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 241026C324B90F820059940F /* Project object */;
 }
