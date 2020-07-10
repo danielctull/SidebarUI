@@ -1,11 +1,20 @@
 
+import SidebarUI
 import SwiftUI
 
 @main
 struct SidebarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                SidebarView {
+                    Text("CONTENT")
+                } leading: {
+                    Text("LEADING")
+                } trailing: {
+                    Text("TRAILING")
+                }
+            }
         }
     }
 }
