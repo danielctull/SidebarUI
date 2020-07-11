@@ -46,27 +46,24 @@ public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
 
     @ViewBuilder
     var main: some View {
-        Color.clear
-            .overlay(
-                HStack {
-                    leading
-                        .measure { leadingSize = $0 }
-                    Spacer()
-                }
-            )
-            .overlay(
-                HStack {
-                    Spacer()
-                    trailing
-                        .measure { trailingSize = $0 }
-                }
-            )
-            .overlay(
-                HStack {
-                    content
-                        .padding(.leading, showLeading ? leadingSize.width : 0)
-                        .padding(.trailing, showTrailing ? trailingSize.width : 0)
-                }
-            )
+
+        ZStack {
+
+            HStack {
+                leading
+                    .measure { leadingSize = $0 }
+                Spacer()
+            }
+
+            HStack {
+                Spacer()
+                trailing
+                    .measure { trailingSize = $0 }
+            }
+
+            content
+                .padding(.leading, showLeading ? leadingSize.width : 0)
+                .padding(.trailing, showTrailing ? trailingSize.width : 0)
+        }
     }
 }
