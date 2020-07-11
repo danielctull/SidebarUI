@@ -49,17 +49,13 @@ public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
 
         ZStack {
 
-            HStack {
-                leading
-                    .measure { leadingSize = $0 }
-                Spacer()
-            }
+            leading
+                .measure { leadingSize = $0 }
+                .align(.leading)
 
-            HStack {
-                Spacer()
-                trailing
-                    .measure { trailingSize = $0 }
-            }
+            trailing
+                .measure { trailingSize = $0 }
+                .align(.trailing)
 
             content
                 .padding(.leading, showLeading ? leadingSize.width : 0)
