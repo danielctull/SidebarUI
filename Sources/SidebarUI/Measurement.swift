@@ -12,8 +12,9 @@ extension View {
 
     func measure(_ block: @escaping (CGSize) -> Void) -> some View {
         background(GeometryReader { proxy in
-            Color.clear.preference(key: SizeKey.self, value: proxy.size)
+            Color.clear
+                .preference(key: SizeKey.self, value: proxy.size)
+                .onPreferenceChange(SizeKey.self, perform: block)
         })
-        .onPreferenceChange(SizeKey.self, perform: block)
     }
 }
