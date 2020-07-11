@@ -6,6 +6,9 @@ let package = Package(
     name: "SidebarUI",
     platforms: [
         .iOS(.v14),
+        .macOS(.v10_16),
+        .tvOS(.v14),
+        .watchOS(.v7),
     ],
     products: [
         .library(name: "SidebarUI", targets: ["SidebarUI"]),
