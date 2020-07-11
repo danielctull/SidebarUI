@@ -4,8 +4,8 @@ import SwiftUI
 
 public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
 
-    @State private var showLeading = true
-    @State private var showTrailing = true
+    private var showLeading: Binding<Bool>
+    private var showTrailing: Binding<Bool>
     @State private var leadingSize = CGSize.zero
     @State private var trailingSize = CGSize.zero
 
@@ -14,39 +14,20 @@ public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
     private let content: Content
 
     public init(
+        showLeading: Binding<Bool>,
+        showTrailing: Binding<Bool>,
         @ViewBuilder content: () -> Content,
         @ViewBuilder leading: () -> Leading,
         @ViewBuilder trailing: () -> Trailing
     ) {
+        self.showLeading = showLeading
+        self.showTrailing = showTrailing
         self.content = content()
         self.trailing = trailing()
         self.leading = leading()
     }
 
     public var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    withAnimation { showLeading.toggle() }
-                } label: {
-                    Image(systemName: "sidebar.left")
-                }
-                Spacer()
-                Button {
-                    withAnimation { showTrailing.toggle() }
-                } label: {
-                    Image(systemName: "sidebar.right")
-                }
-            }
-            .padding()
-
-            main
-        }
-    }
-
-    @ViewBuilder
-    var main: some View {
-
         ZStack {
 
             leading
@@ -58,8 +39,8 @@ public struct SidebarView<Leading: View, Content: View, Trailing: View>: View {
                 .align(.trailing)
 
             content
-                .padding(.leading, showLeading ? leadingSize.width : 0)
-                .padding(.trailing, showTrailing ? trailingSize.width : 0)
+                .padding(.leading, showLeading.wrappedValue ? leadingSize.width : 0)
+                .padding(.trailing, showTrailing.wrappedValue ? trailingSize.width : 0)
         }
     }
 }
